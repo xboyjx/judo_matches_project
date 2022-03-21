@@ -2,9 +2,9 @@ from db.run_sql import run_sql
 from models.player import Player
 
 def save(player):
-    sql = "INSERT INTO Player(name, gender, weight_kg) VALUES ( %s, %s, %s ) RETURNING id"
+    sql = "INSERT INTO players(name, gender, weight_kg) VALUES ( %s, %s, %s ) RETURNING id"
     values = [player.name, player.gender, player.weight_kg]
-    results = run_sql( sql, values )
+    results = run_sql(sql, values )
     player.id = results[0]['id']
     return player
 

@@ -14,6 +14,10 @@ jacob_player = Player("Jacob", "Male", 73)
 player_repository.save(jacob_player)
 
 john_player = Player("John", "Male", 73)
+player_repository.save(john_player)
+
+match1 = Match(jacob_player, john_player, event1, jacob_player)
+match_repository.save(match1)
 
 
 

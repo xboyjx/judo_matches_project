@@ -7,6 +7,10 @@ import repositories.event_repository as event_repository
 import repositories.match_repository as match_repository
 import repositories.player_repository as player_repository
 
+match_repository.delete_all()
+player_repository.delete_all()
+event_repository.delete_all()
+
 event1 = Event("Jacob", "Jaocb", "skcsc")
 event_repository.save(event1)
 
@@ -19,6 +23,7 @@ player_repository.save(john_player)
 match1 = Match(jacob_player, john_player, event1, jacob_player)
 match_repository.save(match1)
 
+pdb.set_trace()
 
 
 

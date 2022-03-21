@@ -24,3 +24,30 @@ def select_all():
         match = Match(player1.id, player2.id, event.id, winner.id)
         matches.append(match)
     return matches
+
+def select(id):
+    match = None
+    sql = "SELECT * FROM matches WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)
+
+    if result is not None:
+        player1 = player_repository.select(result['player1_id'])
+        player2 = player_repository.select(result['player2_id'])
+        event = event_repository.select(result['event_id'])
+        winner = player_repository.select(result['winner'])
+
+        match = Match(player1.id, player2.id, event.id, winner.id)
+
+    return match
+
+def delete_all():
+    sql = "DELETE FROM matches"
+    run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM matches WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+

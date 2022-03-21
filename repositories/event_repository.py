@@ -37,3 +37,14 @@ def delete(id):
     sql = "DELETE FROM events WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def players(event):
+    players = []
+
+    sql = "SELECT * FROM players INNER JOIN matches ON matches.player1_id = player1.id or matches.player2_id = player2.id  WHERE matches.event_id =%s;"
+    values = [event.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        player = Player(row['name'], row['gender'], row['weight_kg'], row['id'])
+        players.append(player)

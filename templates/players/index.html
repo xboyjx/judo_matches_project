@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Players</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Weight</th>
+    </tr>
+    {% for player in players %}
+    <tr>
+        <td><a href = "/players/{{player.id}}">{{player.name}}</a></td>
+        <td>{{player.weight_kg}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -21,7 +21,7 @@ def select_all():
         player2 = player_repository.select(row['player2_id'])
         event = event_repository.select(row['event_id'])
         winner = player_repository.select(row['winner'])
-        match = Match(player1.id, player2.id, event.id, winner.id)
+        match = Match(player1, player2, event, winner)
         matches.append(match)
     return matches
 

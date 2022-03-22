@@ -29,3 +29,8 @@ def create_player():
     player = Player(name, gender, weight_kg)
     player_repository.save(player)
     return redirect("/players")
+
+@players_blueprint.route("/players/<id>/remove")
+def remove_player(id):
+    player_repository.delete(id)
+    return redirect("/players")

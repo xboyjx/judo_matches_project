@@ -6,11 +6,17 @@
     <tr>
         <th>Name</th>
         <th>Weight</th>
+        <th> </th>
     </tr>
     {% for player in players %}
     <tr>
         <td><a href = "/players/{{player.id}}">{{player.name}}</a></td>
-        <td>{{player.weight_kg}}</td>
+        {% if player.weight_kg <=100  %}
+            <td>u{{player.weight_kg}}</td>
+        {% else %}
+            <td>o100</td>
+        {% endif %}
+        <td><a href="/players/{{player.id}}/remove">Remove</a></td>
     </tr>
     {% endfor %}
 </table>

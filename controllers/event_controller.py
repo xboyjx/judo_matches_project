@@ -8,3 +8,7 @@ events_blueprint = Blueprint("events", __name__)
 def events():
     events = event_repository.select_all()
     return render_template("events/index.html", events = events)
+
+# @events_blueprint.route("/events/<id>")
+# def show(id):
+

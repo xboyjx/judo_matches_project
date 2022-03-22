@@ -1,12 +1,13 @@
 {% extends "base.html" %} {% block content %}
 
-<h1>{{player.name}}</h1>
-<table>
-    {% for location in locations%}
-        <th>{{location.name}}</th>
-        <tr>{{location.winner}}</tr>
+<h1>{{player.name}}'s recent fights</h1>
+{% for match in matches %}
+    {% if match.player1.id == player.id or match.player2.id == player.id %}
+        <h2>{{match.event.name}}</h2>
+        <p>{{match.player1.name}} vs {{match.player2.name}}</p>
+        <p>Winner: {{match.winner.name}}</p>
+    {% endif %}
 
-    {% endfor %}
-</table>
+{% endfor %}
 
 {% endblock %}

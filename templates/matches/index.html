@@ -1,10 +1,10 @@
 {% extends "base.html" %}{% block content %}
 
 <h1>Latest Matches</h1>
-{% for match in range(5) %}
-    <h2>{{matches[match].event.name}}</h2>
-    <p>{{matches[match].player1.name}} vs {{matches[match].player2.name}}</p>
-    <p>Winner: {{matches[match].winner.name}}</p>
+{% for match in range(1,6) %}
+    <h2>{{matches[-(match)].event.name}}</h2>
+    <p>{{matches[-(match)].player1.name}} vs {{matches[-(match)].player2.name}}</p>
+    <p>Winner: {{matches[-(match)].winner.name}}</p>
 {% endfor %}
 
 {% endblock %}

@@ -7,6 +7,7 @@
         <th>Name</th>
         <th>Weight</th>
         <th> </th>
+        <th> </th>
     </tr>
     {% for player in players %}
     <tr>
@@ -17,6 +18,7 @@
             <td>o100</td>
         {% endif %}
         <td><a href="/players/{{player.id}}/remove">Remove</a></td>
+        <td><a href="/players/{{player.id}}/update">Update</a></td>
     </tr>
     {% endfor %}
 </table>

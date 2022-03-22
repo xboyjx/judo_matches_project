@@ -34,3 +34,20 @@ def create_player():
 def remove_player(id):
     player_repository.delete(id)
     return redirect("/players")
+
+@players_blueprint.route("/players/<id>/update", methods=['GET'])
+def update_player_screen(id):
+    player = player_repository.select(id)
+    return render_template("players/update.html", player = player)
+
+@players_blueprint.route("/players/<id>", methods=['POST'])
+def update_player(id):
+    name = request.form['name']
+    gender = request.form['gender']
+    weight_kg = request.form['weight_kg']
+    player = Player(name, gender, weight_kg, id)
+    player_repository.update(player)
+    return redirect("/players")
+
+
+    

@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>{{event.name}}</h1>
+
+{% for match in matches %}
+    {%if match.event.id == event.id%}
+        <p>{{match.player1.name}} vs {{match.player2.name}}</p>
+        <p>Winner: {{match.winner.name}}</p>
+        <p>{{match.event.name}}</p>
+    {% endif %}
+
+
+{% endfor %}
+
+{% endblock %}

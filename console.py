@@ -1,3 +1,4 @@
+from nis import match
 import pdb
 from models.event import Event
 from models.player import Player
@@ -36,6 +37,11 @@ match2 = Match(jacob_player, james_player, event2, jacob_player)
 match_repository.save(match2)
 
 match3 = Match(james_player, john_player, event1, john_player)
+match_repository.save(match3)
+
+match_repository.save(match2)
+match_repository.save(match3)
+match_repository.save(match1)
 
 pdb.set_trace()
 

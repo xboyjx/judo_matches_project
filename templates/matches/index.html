@@ -3,7 +3,7 @@
 <h1>Latest Matches</h1>
 {% for match in matches %}
     <h2>{{match.event.name}}</h2>
-    <p>{{match.player1.name}} vs {{match.player2.name}}/p>
+    <p>{{match.player1.name}} vs {{match.player2.name}}</p>
     <p>Winner: {{match.winner.name}}</p>
 {% endfor %}
 

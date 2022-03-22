@@ -15,3 +15,5 @@ def show(id):
     player = player_repository.select(id)
     matches = match_repository.select_all()
     return render_template("players/show.html", player = player, matches = matches)
+
+@players_blueprint.route("players/new")

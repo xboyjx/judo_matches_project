@@ -2,14 +2,24 @@
 
 <h1>{{event.name}}</h1>
 
-{% for match in matches %}
-    {%if match.event.id == event.id%}
-        <p>{{match.player1.name}} vs {{match.player2.name}}</p>
-        <p>Winner: {{match.winner.name}}</p>
-        <p>{{match.event.name}}</p>
-    {% endif %}
+<table>
+    <tr>
+        <th>Event</th>
+        <th>Player in white</th>
+        <th>Player in blue</th>
+        <th>Winner</th>
+    </tr>
+    {% for match in matches %}
+        {% if match.event.id == event.id %}
+            <tr>
+                <td>{{match.event.name}}</td>
+                <td class="white-player-td">{{match.player1.name}}</td>
+                <td class="blue-player-td">{{match.player2.name}}</td>
+                <td>{{match.winner.name}}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>
 
-
-{% endfor %}
 
 {% endblock %}

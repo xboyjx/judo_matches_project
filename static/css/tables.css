@@ -1,0 +1,24 @@
+td, th {
+    text-align:center;
+    align-items:center;
+    padding:10px;
+}
+
+.table-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th{
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.white-player-td {
+    background-color: white;
+}
+
+.blue-player-td {
+    background-color: blue;
+    color: white;
+}

@@ -1,18 +1,18 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Add a new match</h1>
+<h1 class="h1-bottom-margin">Add a new player</h1>
 
-<form action="/players" method="post">
-    <label for="name">What is the new player's name?: </label>
-        <textarea name="name" id="name" cols="10" rows="1"></textarea>
+<form action="/players" method="post" class="submission-field">
+    <label for="name">What is the new player's name?: </label><br>
+        <textarea name="name" id="name" cols="10" rows="1"></textarea><br>
     
-    <label for="gender">Player's Gender:</label>
+    <label for="gender">Player's Gender:</label><br>
       <select name="gender" id="gender">
         <option value="male">Male</option>
         <option value="female">Female</option>
-      </select>
+      </select><br>
 
-    <label for="weight_kg">Player's weight class: </label>
+    <label for="weight_kg">Player's weight class: </label><br>
     <select name="weight_kg" id="weight_kg">
         <option value="60">u60</option>
         <option value="66">u66</option>
@@ -21,7 +21,7 @@
         <option value="90">u90</option>
         <option value="100">u100</option>
         <option value="101">o100</option>
-    </select>
+    </select><br>
 
 
     <input type="submit" value="submit">

@@ -1,13 +1,32 @@
 {% extends "base.html" %} {% block content %}
+<h1>Player information page</h1>
+<p>Name: {{player.name}}</p>
+<p>Gender: {{player.gender}}</p>
+{% if player.weight_kg <=100  %}
+    <p>Weight class: u{{player.weight_kg}}</p>
+{% else %}
+    <p>Weight class: o100</p>
+{% endif %}
 
-<h1>{{player.name}}'s recent fights</h1>
-{% for match in matches %}
-    {% if match.player1.id == player.id or match.player2.id == player.id %}
-        <h2>{{match.event.name}}</h2>
-        <p>{{match.player1.name}} vs {{match.player2.name}}</p>
-        <p>Winner: {{match.winner.name}}</p>
-    {% endif %}
+<h2>{{player.name}}'s recent fights</h2>
+<table>
+    <tr>
+        <th class =>Event</th>
+        <th>Player in white</th>
+        <th>Player in blue</th>
+        <th>Winner</th>
+    </tr>
+    {% for match in matches %}
+        {% if match.player1.id == player.id or match.player2.id == player.id %}
+            <tr>
+                <td>{{match.event.name}}</td>
+                <td class="white-player-td">{{match.player1.name}}</td>
+                <td class="blue-player-td">{{match.player2.name}}</td>
+                <td>{{match.winner.name}}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>
 
-{% endfor %}
 
 {% endblock %}

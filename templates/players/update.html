@@ -1,18 +1,18 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Update {{player.name}}</h1>
+<h1 class="h1-bottom-margin">Update {{player.name}}</h1>
 
-<form action="/players/{{player.id}}" method="post">
-    <label for="name">Name: </label>
-        <textarea name="name" id="name" cols="10" rows="1">{{player.name}}</textarea>
+<form action="/players/{{player.id}}" method="post" class="submission-field">
+    <label for="name">Name: </label><br>
+        <textarea name="name" id="name" cols="10" rows="1">{{player.name}}</textarea><br>
     
-    <label for="gender">Gender: </label>
+    <label for="gender">Gender: </label><br>
       <select name="gender" id="gender">
         <option value="male">Male</option>
         <option value="female">Female</option>
-      </select>
+      </select><br>
 
-    <label for="weight_kg">Weight class: </label>
+    <label for="weight_kg">Weight class: </label><br>
     <select name="weight_kg" id="weight_kg">
         <option value="60">u60</option>
         <option value="66">u66</option>
@@ -21,7 +21,7 @@
         <option value="90">u90</option>
         <option value="100">u100</option>
         <option value="101">o100</option>
-    </select>
+    </select><br>
 
 
     <input type="submit" value="Update">

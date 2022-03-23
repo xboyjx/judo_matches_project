@@ -1,19 +1,22 @@
 {% extends 'base.html' %} {% block content %}
 <h1>Events</h1>
-{% for event in events %}
-    <ul>
-        <li>
-            <b>{{event.name}}</b>
-        </li>
-        <li>
-            {{event.location}}
-        </li>
-        <li>
-            {{event.date}}
-        </li>
-        <li>
-            <a href = "/events/{{event.id}}">competitor list</a>
-        </li>
-    </ul>
-{% endfor %}
+<p>Click on event to see the matches for that event!</p>
+<h2><a></a></h2>
+
+<table>
+    <tr>
+        <th>Event Name</th>
+        <th>Location</th>
+        <th>Date</th>
+        <th></th>
+    </tr>
+    {% for event in events %}
+        <tr>
+            <td><a href="/events/{{event.id}}">{{event.name}}</a></td>
+            <td>{{event.location}}</td>
+            <td>{{event.date}}</td>
+        </tr>
+    {% endfor %}
+</table>
+
 {% endblock %}

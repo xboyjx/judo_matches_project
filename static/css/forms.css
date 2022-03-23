@@ -1,0 +1,11 @@
+textarea, select, label {
+    margin:10px 0;
+    font-size:20px,
+}
+
+.submission-field {
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid white;
+}

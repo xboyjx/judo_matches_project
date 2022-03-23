@@ -1,13 +1,12 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Players</h1>
-<h2><a href="/players/new">Add a new player</a></h2>
-<table>
+<h1 class ="h1-center" >Players</h1>
+<h2 class="center-text"><a href="/players/new">Add a new player</a></h2>
+<p class="center-text">Click on a players name to see their information, and recent matches!</p>
+<table class="table-center">
     <tr>
         <th>Name</th>
         <th>Weight</th>
-        <th> </th>
-        <th> </th>
     </tr>
     {% for player in players %}
     <tr>

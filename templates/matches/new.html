@@ -1,35 +1,35 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Add a new match</h1>
+<h1 class="h1-bottom-margin">Add a new match</h1>
 
-<form action="/matches" method="post">
-    <label for="player1">Select the player wearing white:</label>
+<form action="/matches" method="post" class="submission-field">
+    <label for="player1">Select the player wearing white:</label><br>
       <select name="player1_id" id="player1">
         {% for player in players %}
         <option value="{{ player.id }}">{{ player.name }}</option>
         {% endfor %}
-      </select>
+      </select><br>
     
-    <label for="player2">Select the player wearing blue:</label>
+    <label for="player2">Select the player wearing blue:</label><br>
       <select name="player2_id" id="player2">
         {% for player in players %}
         <option value="{{ player.id }}">{{ player.name }}</option>
         {% endfor %}
-      </select>
+      </select><br>
 
-    <label for="winner">who won the match: </label>
+    <label for="winner">who won the match: </label><br>
     <select name="winner" id="winner">
         <option value="player1">Player in white</option>
         <option value="player2">Player in blue</option>
-    </select>
+    </select><br>
 
 
-    <label for="event">Select the event of this match:</label>
+    <label for="event">Select the event of this match:</label><br>
       <select name="event_id" id="event">
           {% for event in events %}
           <option value="{{event.id}}">{{event.name}}</option>
           {% endfor %}
-      </select>
+      </select><br>
 
     <input type="submit" value="submit">
     
